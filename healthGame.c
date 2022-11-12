@@ -4,15 +4,15 @@
 #include <windows.h>
 #include <time.h>
 
-#define High 100  // ÓÎÏ·»­Ãæ³ß´ç
+#define High 100  // æ¸¸æˆç”»é¢å°ºå¯¸
 #define Width 100
 
 
-// È«¾Ö±äÁ¿
-int cells[High][Width]; // ËùÓĞÎ»ÖÃÏ¸°û£¨Éú1»òËÀ0£©
+// å…¨å±€å˜é‡
+int cells[High][Width]; // æ‰€æœ‰ä½ç½®ç»†èƒï¼ˆç”Ÿ1æˆ–æ­»0ï¼‰
 
-//ËùÓĞÍ¼ÏñÀàµÄ³ÌĞò£¬¶¼ÒªÕâÖÖËÀ¼ÇÓ²±³µÄ´úÂë¶Î 
-void gotoxy(int x, int y)//ÀàËÆÓÚÇåÆÁº¯Êı
+//æ‰€æœ‰å›¾åƒç±»çš„ç¨‹åºï¼Œéƒ½è¦è¿™ç§æ­»è®°ç¡¬èƒŒçš„ä»£ç æ®µ 
+void gotoxy(int x, int y)//ç±»ä¼¼äºæ¸…å±å‡½æ•°
 {
 	HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 	COORD pos;
@@ -21,7 +21,7 @@ void gotoxy(int x, int y)//ÀàËÆÓÚÇåÆÁº¯Êı
 	SetConsoleCursorPosition(handle, pos);
 }
 
-void startup()	//Êı¾İ³õÊ¼»¯
+void startup()	//æ•°æ®åˆå§‹åŒ–
 {
 	int i, j;
 	for (i = 0; i < High; i++)
@@ -29,24 +29,24 @@ void startup()	//Êı¾İ³õÊ¼»¯
 			cells[i][j] = 1;
 }
 
-void show()	 //ÏÔÊ¾»­Ãæ
+void show()	 //æ˜¾ç¤ºç”»é¢
 {
-	gotoxy(0, 0);	//ÇåÆÁ
+	gotoxy(0, 0);	//æ¸…å±
 	int i, j;
 	for (i = 0; i < High - 1; i++) {
 		for (j = 0; j < Width - 1; j++)
 			if (cells[i][j] == 1)
-				printf("*");	//Êä³ö»îµÄÏ¸°û
-			else	//cells[i][j]==0 (ËÀÍö)
+				printf("*");	//è¾“å‡ºæ´»çš„ç»†èƒ
+			else	//cells[i][j]==0 (æ­»äº¡)
 				printf(" ");
 		printf("\n");
 	}
-	Sleep(50);	//Í£¶Ù0.05Ãë 
+	Sleep(50);	//åœé¡¿0.05ç§’ 
 }
 
 void updateWithoutInput()
 {
-	int NeibourNum, NewCells[High][Width], i, j;	//ÏÂÒ»Ö¡µÄÏ¸°ûÇé¿ö
+	int NeibourNum, NewCells[High][Width], i, j;	//ä¸‹ä¸€å¸§çš„ç»†èƒæƒ…å†µ
 	for (i = 1; i < High - 1; i++)
 	{
 		for (j = 1; j < Width - 1; j++)
@@ -63,7 +63,7 @@ void updateWithoutInput()
 			if (NeibourNum == 3)
 				NewCells[i][j] = 1;
 			else if (NeibourNum == 2)
-				NewCells[i][j] = cells[i][j];//Ö±½Ó¸³ÖµµÃÁË
+				NewCells[i][j] = cells[i][j];//ç›´æ¥èµ‹å€¼å¾—äº†
 			else	// >3||<2
 				NewCells[i][j] = 0;
 		}
@@ -73,17 +73,17 @@ void updateWithoutInput()
 	{
 		for (j = 0; j < Width - 1; j++)
 		{
-			cells[i][j] = NewCells[i][j];	//¸²Ğ´¸üĞÂ 
+			cells[i][j] = NewCells[i][j];	//è¦†å†™æ›´æ–° 
 		}
 	}
 }
 
 int main()
 {
-	startup();  //Êı¾İ³õÊ¼»¯	
-	while (TRUE) //ÓÎÏ·Ñ­»·Ö´ĞĞ
+	startup();  //æ•°æ®åˆå§‹åŒ–	
+	while (TRUE) //æ¸¸æˆå¾ªç¯æ‰§è¡Œ
 	{
-		show();  //ÏÔÊ¾»­Ãæ
+		show();  //æ˜¾ç¤ºç”»é¢
 		updateWithoutInput();
 	}
 }
