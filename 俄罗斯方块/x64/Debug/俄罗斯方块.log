@@ -1,6 +1,0 @@
-﻿  RussianBlock.c
-D:\ProgramDL\C++DL\C++Game\俄罗斯方块\RussianBlock.c(383,13): warning C4473: “scanf_s”: 没有为格式字符串传递足够的参数
-D:\ProgramDL\C++DL\C++Game\俄罗斯方块\RussianBlock.c(383,13): message : 占位符和其参数预计 2 可变参数，但提供的却是 1 参数
-D:\ProgramDL\C++DL\C++Game\俄罗斯方块\RussianBlock.c(383,13): message : 缺失的可变参数 2 为格式字符串“%c”所需
-D:\ProgramDL\C++DL\C++Game\俄罗斯方块\RussianBlock.c(383,13): message : 此参数用作缓冲区大小
-  俄罗斯方块.vcxproj -> D:\ProgramDL\C++DL\C++Game\x64\Debug\俄罗斯方块.exe
