@@ -1,0 +1,3 @@
+﻿  2048.cpp
+D:\ProgramDL\C++DL\C++Game\2048\2048.cpp(398,15): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
+  2048.vcxproj -> D:\ProgramDL\C++DL\C++Game\x64\Debug\2048.exe
