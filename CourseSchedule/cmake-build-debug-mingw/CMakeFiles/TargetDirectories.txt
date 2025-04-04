@@ -1,0 +1,3 @@
+/home/mwvifj/Byou/ProgramDL/CDL/CourseSchedule/cmake-build-debug-mingw/CMakeFiles/CourseSchedule.dir
+/home/mwvifj/Byou/ProgramDL/CDL/CourseSchedule/cmake-build-debug-mingw/CMakeFiles/edit_cache.dir
+/home/mwvifj/Byou/ProgramDL/CDL/CourseSchedule/cmake-build-debug-mingw/CMakeFiles/rebuild_cache.dir
